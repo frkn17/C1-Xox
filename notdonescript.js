@@ -39,13 +39,19 @@ $(function(){
             $('#turn').text("O WON");
             finished();
         }
-        if((start == 9 ) && (winner != -1)){
+        if((start == 9 ) && (winner == -1)){
             finished();
             $('#newTour').removeAttr('disabled');
+
         }
         $('#score').text(`ROUND : "${tour}" || X: ${xScore} - ${oScore}: Y`);
     });
     $('#newTour').click(function(){
+        start=0;
+        gameplay = [[2,2,2],[2,2,2],[2,2,2]];
+        xS=0;
+        oS=0;
+        winner=-1;
         tour++;
         $('.cell').removeAttr('disabled');
         $('.cell').text('');
@@ -315,6 +321,7 @@ $(function(){
         oS=0;
         winner=-1;
         $('#newTour').removeAttr('disabled','disabled');
+        $('.cell').attr('disabled','disabled');
     }
 
 
