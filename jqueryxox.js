@@ -42,6 +42,7 @@ $(function(){
         if((start == 9 ) && (winner == -1)){
             finished();
             $('#newTour').removeAttr('disabled');
+            $('#turn').text('Draw. Click New Tour.');
 
         }
         $('#score').text(`ROUND : "${tour}" || X: ${xScore} - ${oScore}: Y`);
